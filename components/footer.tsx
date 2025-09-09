@@ -5,8 +5,8 @@ export default function footer() {
     <footer className="py-12 bg-muted/30 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center space-y-6">
-          <div className="text-sm text-text-muted font-mono">
-            © 2025 momoiamcgi All rights reserved. BUILT FOR CREATORS.
+          <div className="text-sm text-text-muted ">
+            © 2025 momoiamcgi All rights reserved. 
           </div>
 
           {/* 联系方式图标 */}

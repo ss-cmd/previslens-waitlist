@@ -1,3 +1,112 @@
+// "use client"
+// import { useRef } from "react"
+// import CallToAction from "./call-to-action"
+// import VideoSection from "./video-section"
+
+// export default function HeroContent() {
+//   const moveTextRef = useRef<HTMLDivElement>(null)
+
+
+// return (
+//   <div className="relative min-h-screen text-white">
+//     {/* For Your Reference Tag - (No changes needed, this is well-positioned) */}
+//     <div className="fixed top-20 left-1/2 -translate-x-1/2 z-20">
+//       <span className="inline-block text-white font-semibold text-base tracking-wide bg-black/40 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
+//         Your AI Co-Director for Cinematic Product Shots
+//       </span>
+//     </div>
+
+//     {/* --- START OF MODIFICATION 1: PrevisLens Title --- */}
+//     <div 
+//       ref={moveTextRef} 
+//       // We add 'flex' and 'items-center' to achieve true vertical centering of the content inside.
+//       // We also add a small top padding 'pt-8' for a slight visual adjustment downwards.
+//       className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none pt-8"
+//     >
+//       <h1
+//         className="text-[150px] sm:text-[180px] md:text-[220px] lg:text-[280px] xl:text-[320px] font-bold leading-none tracking-tighter text-center"
+//         style={{
+//           // The magic for the vertical gradient happens here.
+//           // We create a gradient from solid white at the top (60%) to fully transparent white at the bottom.
+//           background: "linear-gradient(to bottom, #ffffff 60%, #ffffff00)",
+//           WebkitBackgroundClip: "text",
+//           WebkitTextFillColor: "transparent",
+//           backgroundClip: "text",
+//         }}
+//       >
+//         PrevisLens
+//       </h1>
+//     </div>
+//     {/* --- END OF MODIFICATION 1 --- */}
+
+//     {/* --- START OF MODIFICATION 2: Vertical Spacing Rule --- */}
+//     {/* The rule: We use a consistent top padding to separate major sections.
+//         Here, we change 'pt-[60vh]' to 'pt-[55vh]' to slightly reduce the gap
+//         between the perceived center and the start of the content, making it feel more connected.
+//         We also add a consistent bottom margin 'mb-24' (or mb-32) to create a rhythmic spacing. */}
+//     <div className="relative z-20 pt-[55vh] px-4 sm:px-6">
+//       <div className="mb-24 md:mb-32">
+//         <CallToAction />
+//       </div>
+
+//       <div className="mb-24 md:mb-32">
+//         <VideoSection />
+//       </div>
+//       {/* --- END OF MODIFICATION 2 --- */}
+
+//       {/* --- START OF MODIFICATION 3: Final Slogan Section --- */}
+//       {/* We wrap the text content in a new 'section' and apply the blurred background style. */}
+//       <section className="mb-24 md:mb-32">
+//         <div className="relative max-w-3xl mx-auto p-8 md:p-12 rounded-2xl overflow-hidden">
+//           {/* This div creates the blurred background effect */}
+//           <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl"></div>
+
+//           {/* This ensures the text content is on top of the background */}
+//           <div className="relative z-10 text-center space-y-6">
+//             <p className="text-lg md:text-xl lg:text-2xl text-white">
+//               Upload your model — or generate one with AI.
+//             </p>
+//             <p className="text-lg md:text-xl lg:text-2xl text-white">
+//               Then direct your perfect shot in minutes.
+//             </p>
+//             <div className="pt-4">
+//               <a
+//                 href="#cta-section" // You might want to point this to your actual waitlist form
+//                 className="inline-block border-b border-white hover:border-transparent transition-colors text-lg md:text-xl hover:text-white/80 text-white"
+//               >
+//                 Waitlist now.
+//               </a>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//       {/* --- END OF MODIFICATION 3 --- */}
+
+//       {/* Scroll Indicator (Stylistically good, no changes needed) */}
+//       <div className="flex justify-center mb-10">
+//         <div className="animate-bounce">
+//           <svg
+//             xmlns="http://www.w3.org/2000/svg"
+//             width="24"
+//             height="24"
+//             viewBox="0 0 24 24"
+//             fill="none"
+//             stroke="currentColor"
+//             strokeWidth="2"
+//             strokeLinecap="round"
+//             strokeLinejoin="round"
+//             className="text-white/70"
+//           >
+//             <path d="M12 5v14"></path>
+//             <path d="m19 12-7 7-7-7"></path>
+//           </svg>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// )
+// }
+
 "use client"
 import { useRef } from "react"
 import CallToAction from "./call-to-action"
@@ -11,55 +120,68 @@ export default function HeroContent() {
       {/* For Your Reference Tag */}
       <div className="fixed top-20 left-1/2 -translate-x-1/2 z-20">
         <span className="inline-block text-white font-semibold text-base tracking-wide bg-black/40 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
-        Your AI Co-Director for Cinematic Product Shots
+          {/* Your AI Co-Director for Cinematic Product Shots */}
+          Instant Cinematic Video, Directed by AI 
         </span>
-        {/* Create professional 3D product videos from a single prompt */}
       </div>
 
-      <div ref={moveTextRef} className="fixed top-1/2 left-0 w-full -translate-y-1/2 z-10 pointer-events-none">
-        <h1
-          className="text-[150px] sm:text-[180px] md:text-[220px] lg:text-[280px] xl:text-[320px] font-bold leading-none tracking-tighter text-center text-white"
-          style={{
-            background: "linear-gradient(to bottom, #ffffff, #cccccc)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-
-          }}
-        >
-        PrevisLens
-        </h1>
+      <div
+        ref={moveTextRef}
+        className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none"
+        style={{ transform: "translateY(-10vh)" }}
+      >
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+          <h1
+            className="text-[120px] sm:text-[150px] md:text-[200px] lg:text-[250px] xl:text-[300px] font-bold leading-none tracking-tighter text-center"
+            style={{
+              background: "linear-gradient(to bottom, #ffffff 60%, #ffffff00)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              color: "white", // fallback color
+              whiteSpace: "nowrap", // prevent text wrapping that could cut off letters
+              overflow: "visible", // ensure letters aren't clipped
+            }}
+          >
+            PrevisLens
+          </h1>
+        </div>
       </div>
 
       {/* Content Sections */}
-      <div className="relative z-20 pt-[60vh] px-4 sm:px-6">
+      <div className="relative z-20 pt-[55vh] px-4 sm:px-6">
         <CallToAction />
 
         {/* Video Section */}
         <VideoSection />
 
-        {/* Text Content */}
-        <section className="max-w-2xl mx-auto px-4 text-center space-y-6 mb-20">
-          <p className="text-lg md:text-xl lg:text-2xl text-white">Turn one image into a structured concept world.</p>
-          <p className="text-lg md:text-xl lg:text-2xl text-white">You mark. We expand.</p>
-          <p className="text-lg md:text-xl lg:text-2xl text-white">
-            We don't generate images —
-            <br />
-            We extract structure from the one you bring.
-          </p>
+        {/* CTA Content */}
+        <section className="mb-24 md:mb-32">
+          <div className="relative max-w-3xl mx-auto p-8 md:p-12 rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl"></div>
 
-          <div className="pt-4">
-            <a
-              href="#cta-section"
-              className="inline-block border-b border-white hover:border-transparent transition-colors text-lg md:text-xl hover:text-white/80 text-white"
-            >
-              Waitlist now.
-            </a>
+            <div className="relative z-10 text-center space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+                Join us so you don't missout.
+              </h2>
+
+              <div className="mt-8">
+                <div className="pt-4">
+                  <a
+                    href="#cta-section" // You might want to point this to your actual waitlist form
+                    className="inline-block border-b border-white hover:border-transparent transition-colors text-lg md:text-xl hover:text-white/80 text-white"
+                  >
+                    Waitlist now.
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
         </section>
 
         {/* Scroll Indicator */}
-        <div className="flex justify-center mb-10">
+        {/* <div className="flex justify-center mb-10">
           <div className="animate-bounce">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +199,7 @@ export default function HeroContent() {
               <path d="m19 12-7 7-7-7"></path>
             </svg>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
