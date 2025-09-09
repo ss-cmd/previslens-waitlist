@@ -16,7 +16,7 @@ export default function PulsingCircle() {
           thickness={0.1}
           softness={0.2}
           intensity={5}
-          spotsPerColor={5}
+          // spotsPerColor={5}
           spotSize={0.1}
           pulse={0.1}
           smoke={0.5}
@@ -47,9 +47,9 @@ export default function PulsingCircle() {
             <path id="circle" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
           </defs>
           <text className="text-sm fill-white/80 instrument">
-            <textPath href="#circle" startOffset="0%">
+            {/* <textPath href="#circle" startOffset="0%">
               v0 is amazing • v0 is amazing • v0 is amazing • v0 is amazing •
-            </textPath>
+            </textPath> */}
           </text>
         </motion.svg>
       </div>
