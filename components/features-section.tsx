@@ -36,32 +36,38 @@ interface Feature {
 //   },
 // ]
 const features: Feature[] = [
-    {
-      id: "instant-video",
-      title: "Your AI Co-Director",
-      description:
-        "Our system powered by a Multi-Agent Generative Cinematography Engine.You can get a complete, professionally-directed video in minutes, not days. Our Multi-Agent System analyzes your prompt to create either a seamless, continuous shot of a specific duration, or a dynamic, edited sequence with multiple camera angles—ready for immediate use. (Fine-tune keyframes coming soon)",
-      screenshot: "/final-car-showcase-video-player.jpg", // 视觉：应该是一个播放器界面，展示最终的汽车视频成品
-    },
-    {
-        id: "pro-export",
-        title: "Export a Production-Ready Scene",
-        description:
-        "Export the entire AI-generated scene to Blender with a single click. Our script perfectly reconstructs all shots and lighting, providing a robust, editable starting point for your team to refine and finalize, and a production-ready starting point for high-end rendering. All these under 90 seconds.",
-        screenshot: "/blender-3d-scene-export-interface.jpg", // 视觉：Web与Blender分屏对比图
-      },
-    {
-      id: "ai-render",
-      title: "AI Render with Perfect Brand Fidelity",
-      description:
-            "Our AI respects your core asset. Whether you upload a precise 3D model or generate a new concept with AI, we render stunning, creative visuals directly onto your product's true geometry. No guesswork, no approximations.It's the perfect tool to visualize new concepts, or to empower your community to generate stunning, on-brand UGC that respects your core asset.",
+  {
+    id: "instant-video",
+    title: "Your AI Co-Director",
+    description:
+    "Stop wrestling with software and storyboard. Just describe your vision, and our AI Director crafts a complete, professionally-shot video for your product in minutes. Get either a seamless tracking shot or a dynamic,edited multi-angle sequence, ready for immediate use.",
+      // "From a simple text prompt to a complete, professionally-directed video in minutes. Our AI acts as your creative partner, understanding your vision to generate either a seamless, continuous shot or a dynamic,  edited, multi-angle sequence for immediate use. Stop wrestling with timelines and complex software.",
+    // "Our system powered by a Multi-Agent Generative Cinematography Engine. You can get a complete, professionally-directed video in minutes, not days. Our Multi-Agent System analyzes your prompt to create either a seamless, continuous shot of a specific duration, or a dynamic, edited sequence with multiple camera angles—ready for immediate use. (Fine-tune keyframes coming soon)",
+    screenshot: "/show-case.png", // 视觉：应该是一个播放器界面，展示最终的汽车视频成品
+  },
+  {
+    id: "pro-export",
+    title: "One Click, Export a Production-Ready Scene",
+    // "Export a Production-Ready Scene",
+    description:
+      "Don't just preview it—use it. Export the entire AI-generated scene, including all cameras and lights, directly to Blender. What used to be a half-day of manual setup is now a under 90-second, production-ready starting point for your team's high-end rendering and final touches.",
+    // "Export the entire AI-generated scene to Blender with a single click. Our script perfectly reconstructs all shots and lighting, providing a robust, editable starting point for your team to refine and finalize, and a production-ready starting point for high-end rendering. All these under 90 seconds.",
+    screenshot: "/3d-scene-export.png", // 视觉：Web与Blender分屏对比图
+  },
+  {
+    id: "ai-render",
+    title: "Your Brand, Reimagined",
+    // "AI Render with Perfect Brand Fidelity",
+    description:
+    "Unlock limitless creative styles without compromising brand fidelity. Our AI Render applies any artistic concept directly onto your product's true 3D geometry. Use it to art-direct the perfect starting and ending frames, providing a visual ground truth to guide any generative model, visualize new campaigns or empower your community to create on-brand UGC.",
+      // "Our AI respects your core asset. Whether you upload a precise 3D model or generate a new concept with AI, we render stunning, creative visuals directly onto your product's true geometry. No guesswork, no approximations.It's the perfect tool to visualize new concepts, or to empower your community to generate stunning, on-brand UGC that respects your core asset.",
+      // "Unlock limitless creative variations without compromising your brand. Our advanced AI rendering pipeline applies any artistic style directly onto your product's true geometry. Go from a standard 3D model to a stunning, on-brand visual in a single step. Perfect for visualizing new campaigns or empowering your community to create.",
+    // "Go beyond photorealism. Our AI applies any creative style directly onto your product's true geometry. Visualize new concepts, or empower your community to generate stunning, on-brand UGC.",
+    // isComingSoon: true,
+    screenshot: "/ai-render.png", // 视觉：前后对比图
+  },
 
-        // "Go beyond photorealism. Our AI applies any creative style directly onto your product's true geometry. Visualize new concepts, or empower your community to generate stunning, on-brand UGC.",
-      isComingSoon: true,
-      screenshot: "/ai-rendering-with-brand-fidelity-showcase.jpg", // 视觉：前后对比图
-    },
-    
-  ]
+]
 
 export default function FeaturesSection() {
   // --- (The state management logic remains exactly the same) ---
@@ -71,10 +77,6 @@ export default function FeaturesSection() {
     setExpandedFeature(expandedFeature === featureId ? "" : featureId)
   }
 
-  // --- START OF PRECISION FIX ---
-  // We no longer need the 'currentFeature' variable at the top level,
-  // as the image will now be determined inside the loop.
-
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       {/* The main grid now contains only the feature list on the right. 
@@ -82,7 +84,7 @@ export default function FeaturesSection() {
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Left side - This will be a "sticky" container for our image */}
         <div className="relative lg:sticky lg:top-20">
-          <div className="aspect-[4/3] bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden">
+          {/* <div className="aspect-[4/3] bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden"> */}
             {(() => {
               // This logic finds the currently expanded feature to display the correct image.
               const currentFeature = features.find((f) => f.id === expandedFeature);
@@ -101,7 +103,7 @@ export default function FeaturesSection() {
                 </div>
               );
             })()}
-          </div>
+          {/* </div> */}
         </div>
 
         {/* Right side - Features list (Accordion) */}

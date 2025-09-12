@@ -111,6 +111,8 @@
 import { useRef } from "react"
 import CallToAction from "./call-to-action"
 import VideoSection from "./video-section"
+import FocusFrame from "@/components/FocusFrame"
+
 
 export default function HeroContent() {
   const moveTextRef = useRef<HTMLDivElement>(null)
@@ -121,7 +123,7 @@ export default function HeroContent() {
       <div className="fixed top-20 left-1/2 -translate-x-1/2 z-20">
         <span className="inline-block text-white font-semibold text-base tracking-wide bg-black/40 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
           {/* Your AI Co-Director for Cinematic Product Shots */}
-          Instant Cinematic Video, Directed by AI 
+          Instant Cinematic Video, Directed by AI
         </span>
       </div>
 
@@ -156,7 +158,7 @@ export default function HeroContent() {
         <VideoSection />
 
         {/* CTA Content */}
-        <section className="mb-24 md:mb-32">
+        {/* <section className="mb-24 md:mb-32">
           <div className="relative max-w-3xl mx-auto p-8 md:p-12 rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl"></div>
 
@@ -178,28 +180,53 @@ export default function HeroContent() {
 
             </div>
           </div>
-        </section>
+        </section> */}
+        <section className="mb-24 md:mb-32">
+          <div className="relative max-w-3xl mx-auto p-8 md:p-12 rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl"></div>
 
-        {/* Scroll Indicator */}
-        {/* <div className="flex justify-center mb-10">
-          <div className="animate-bounce">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-white/70"
-            >
-              <path d="M12 5v14"></path>
-              <path d="m19 12-7 7-7-7"></path>
-            </svg>
+            <div className="relative z-10 text-center space-y-8">
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+                Join us so you don't miss out.
+              </h2>
+
+              {/* 
+                This is the new container for the FocusFrame.
+                - 'flex justify-center': Horizontally centers the icon.
+                - 'py-4': Adds some vertical breathing room around it.
+              */}
+              <div className="flex justify-center py-4">
+                {/* 
+                  COLOR & SIZE:
+                  - 'text-white' provides the color.
+                  - 'transform scale-150' (1.5x) or 'scale-200' (2x) makes it prominent.
+                    For a standalone element, we can make it slightly larger.
+                */}
+                <div className="flex justify-center py-4">
+                  <div className="transform scale-300 md:scale-200">
+                    {/* --- START OF PRECISION FIX --- */}
+                    {/* Now, we simply pass the desired color as a prop. It's clean and clear. */}
+                    <FocusFrame color="#C7F9A9" />
+                    {/* --- END OF PRECISION FIX --- */}
+                  </div>
+                </div>
+              </div>
+
+              {/* The 'Waitlist now' link. We remove the extra top padding from the div
+                  as the container above already provides spacing. */}
+              <div>
+                <a
+                  href="#cta-section"
+                  className="inline-block border-b border-white hover:border-transparent transition-colors text-lg md:text-xl hover:text-white/80 text-white"
+                >
+                  Waitlist now.
+                </a>
+              </div>
+
+            </div>
           </div>
-        </div> */}
+        </section>
       </div>
     </div>
   )

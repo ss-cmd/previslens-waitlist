@@ -2,15 +2,15 @@
 
 import Header from "@/components/header"
 import HeroContent from "@/components/hero-content"
-import PulsingCircle from "@/components/pulsing-circle"
+// import FocusFrame from "@/components/FocusFrame"
 import ShaderBackground from "@/components/shader-background"
 
 export default function ShaderShowcase() {
   return (
     <ShaderBackground>
       <Header />
+      {/* <FocusFrame /> */}
       <HeroContent />
-      <PulsingCircle />
     </ShaderBackground>
   )
 }

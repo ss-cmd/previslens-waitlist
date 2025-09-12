@@ -6,11 +6,18 @@ export default function footer() {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center space-y-6">
           <div className="text-sm text-text-muted ">
-            © 2025 momoiamcgi All rights reserved. 
+            © 2025 momoiamcgi studio All rights reserved. 
           </div>
 
           {/* 联系方式图标 */}
           <div className="flex justify-center space-x-8 text-text-secondary">
+          <a
+              href="mailto:contact@foryourref.com"
+              aria-label="Email"
+              className="hover:text-primary transition"
+            >
+              <Mail size={24} />
+            </a>
             <a
               href="https://x.com/shuxiaoshushu"
               target="_blank"
@@ -20,13 +27,7 @@ export default function footer() {
             >
               <Twitter size={24} />
             </a>
-            <a
-              href="mailto:contact@foryourref.com"
-              aria-label="Email"
-              className="hover:text-primary transition"
-            >
-              <Mail size={24} />
-            </a>
+            
             <a
               href="https://www.instagram.com/momoiamcgi"
               target="_blank"
