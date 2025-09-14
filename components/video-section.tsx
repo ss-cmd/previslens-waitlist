@@ -6,7 +6,8 @@ interface VideoSectionProps {
 }
 
 export default function VideoSection({ className }: VideoSectionProps) {
-  const videoId = "JhrSRv524tg" // YouTube video ID
+  const videoId ="OEZVredw8Gc"
+  //  "JhrSRv524tg" // YouTube video ID
 
 return (
   <section id="video-section" className={`max-w-7xl mx-auto px-4 sm:px-6 mb-20 ${className || ""}`}>
