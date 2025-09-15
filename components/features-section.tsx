@@ -1,9 +1,11 @@
 "use client"
-import { useState } from "react"
+import { Key, useState } from "react"
 import { Plus, Minus } from "lucide-react"
 
 // --- (The 'features' array and 'Feature' interface remain exactly the same) ---
 interface Feature {
+  overlayGif?: string | undefined
+  details: any
   id: string
   title: string
   description: string
@@ -36,19 +38,42 @@ interface Feature {
 //   },
 // ]
 const features: Feature[] = [
+  // {
+  //   id: "instant-video",
+  //   title: "Your AI Co-Director",
+  //   description:
+  //   "Stop wrestling with software and storyboard. Just describe your vision, and our AI Director crafts a complete, professionally-shot video for your product in minutes. Get either a seamless tracking shot or a dynamic,edited multi-angle sequence, ready for immediate use.",
+  //   screenshot: "/show-case.png", // 视觉：应该是一个播放器界面，展示最终的汽车视频成品
+  //   // "From a simple text prompt to a complete, professionally-directed video in minutes. Our AI acts as your creative partner, understanding your vision to generate either a seamless, continuous shot or a dynamic,  edited, multi-angle sequence for immediate use. Stop wrestling with timelines and complex software.",
+  //   // "Our system powered by a Multi-Agent Generative Cinematography Engine. You can get a complete, professionally-directed video in minutes, not days. Our Multi-Agent System analyzes your prompt to create either a seamless, continuous shot of a specific duration, or a dynamic, edited sequence with multiple camera angles—ready for immediate use. (Fine-tune keyframes coming soon)",
+
+  // },
   {
     id: "instant-video",
     title: "Your AI Co-Director",
-    description:
-    "Stop wrestling with software and storyboard. Just describe your vision, and our AI Director crafts a complete, professionally-shot video for your product in minutes. Get either a seamless tracking shot or a dynamic,edited multi-angle sequence, ready for immediate use.",
-      // "From a simple text prompt to a complete, professionally-directed video in minutes. Our AI acts as your creative partner, understanding your vision to generate either a seamless, continuous shot or a dynamic,  edited, multi-angle sequence for immediate use. Stop wrestling with timelines and complex software.",
-    // "Our system powered by a Multi-Agent Generative Cinematography Engine. You can get a complete, professionally-directed video in minutes, not days. Our Multi-Agent System analyzes your prompt to create either a seamless, continuous shot of a specific duration, or a dynamic, edited sequence with multiple camera angles—ready for immediate use. (Fine-tune keyframes coming soon)",
-    screenshot: "/show-case.png", // 视觉：应该是一个播放器界面，展示最终的汽车视频成品
+
+    // --- START OF MODIFICATION ---
+    // 1. We keep your excellent opening sentence as the main description.
+    description: "Stop wrestling with timelines and complex software. Just describe the shot, and our AI creative partner handles the rest:",
+
+    // 2. We add a new 'details' array for the bullet points.
+    details: [
+      "**Generative Cinematography:** AI designs a complete sequence of professional shots, from seamless tracking to dynamic multi-angle cuts, all tailored to your model.",
+      "**Intelligent Lighting:** Our system thinks like a Director of Photography, crafting physically-based lighting to make your product the hero of every frame."
+    ],
+
+    // 3. We use the original 'screenshot' for the static base image.
+    screenshot: "/show-case.jpg",
+
+    // 4. We add a new optional 'overlayGif' property.
+    overlayGif: "/show-case.gif", // Replace with the actual path to your GIF
+    // --- END OF MODIFICATION ---
   },
   {
     id: "pro-export",
     title: "One Click, Export a Production-Ready Scene",
     // "Export a Production-Ready Scene",
+    details: null,
     description:
       "Don't just preview it—use it. Export the entire AI-generated scene, including all cameras and lights, directly to Blender. What used to be a half-day of manual setup is now a under 90-second, production-ready starting point for your team's high-end rendering and final touches.",
     // "Export the entire AI-generated scene to Blender with a single click. Our script perfectly reconstructs all shots and lighting, providing a robust, editable starting point for your team to refine and finalize, and a production-ready starting point for high-end rendering. All these under 90 seconds.",
@@ -57,11 +82,12 @@ const features: Feature[] = [
   {
     id: "ai-render",
     title: "Your Brand, Reimagined",
+    details: null,
     // "AI Render with Perfect Brand Fidelity",
     description:
-    "Unlock limitless creative styles without compromising brand fidelity. Our AI Render applies any artistic concept directly onto your product's true 3D geometry. Use it to art-direct the perfect starting and ending frames, providing a visual ground truth to guide any generative model, visualize new campaigns or empower your community to create on-brand UGC.",
-      // "Our AI respects your core asset. Whether you upload a precise 3D model or generate a new concept with AI, we render stunning, creative visuals directly onto your product's true geometry. No guesswork, no approximations.It's the perfect tool to visualize new concepts, or to empower your community to generate stunning, on-brand UGC that respects your core asset.",
-      // "Unlock limitless creative variations without compromising your brand. Our advanced AI rendering pipeline applies any artistic style directly onto your product's true geometry. Go from a standard 3D model to a stunning, on-brand visual in a single step. Perfect for visualizing new campaigns or empowering your community to create.",
+      "Unlock limitless creative styles without compromising brand fidelity. Our AI Render applies any artistic concept directly onto your product's true 3D geometry. Use it to art-direct the perfect starting and ending frames, providing a visual ground truth to guide any generative model, visualize new campaigns or empower your community to create on-brand UGC.",
+    // "Our AI respects your core asset. Whether you upload a precise 3D model or generate a new concept with AI, we render stunning, creative visuals directly onto your product's true geometry. No guesswork, no approximations.It's the perfect tool to visualize new concepts, or to empower your community to generate stunning, on-brand UGC that respects your core asset.",
+    // "Unlock limitless creative variations without compromising your brand. Our advanced AI rendering pipeline applies any artistic style directly onto your product's true geometry. Go from a standard 3D model to a stunning, on-brand visual in a single step. Perfect for visualizing new campaigns or empowering your community to create.",
     // "Go beyond photorealism. Our AI applies any creative style directly onto your product's true geometry. Visualize new concepts, or empower your community to generate stunning, on-brand UGC.",
     // isComingSoon: true,
     screenshot: "/ai-render.png", // 视觉：前后对比图
@@ -79,31 +105,60 @@ export default function FeaturesSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      {/* The main grid now contains only the feature list on the right. 
-          The image will be conditionally rendered inside the list itself. */}
       <div className="grid lg:grid-cols-2 gap-12 items-start">
-        {/* Left side - This will be a "sticky" container for our image */}
+        {/* Left side - Sticky container for the visual content */}
         <div className="relative lg:sticky lg:top-20">
-          {/* <div className="aspect-[4/3] bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden"> */}
+          <div className="aspect-[4/3] bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg overflow-hidden">
             {(() => {
-              // This logic finds the currently expanded feature to display the correct image.
               const currentFeature = features.find((f) => f.id === expandedFeature);
-              return currentFeature?.screenshot ? (
+
+              // --- START OF PRECISION FIX: Conditional Rendering Logic ---
+
+              // 1. If the current feature is expanded AND it has a GIF, ONLY show the GIF.
+              if (currentFeature && currentFeature.overlayGif) {
+                return (
+                  // <img
+                  //   key={currentFeature.id + "-gif"} // Unique key for the GIF
+                  //   src={currentFeature.overlayGif}
+                  //   alt={currentFeature.title + " in action"}
+                  //   className="w-full h-full object-cover animate-fade-in"
+                  // />
+                  <img
+                    // --- START OF PRECISION FIX ---
+                    // 1. The key now includes a timestamp. Every time you expand,
+                    //    'expandedFeature' changes, triggering a re-render.
+                    //    Date.now() generates a NEW key, forcing React to create a brand new <img> element.
+                    key={currentFeature.id + "-gif-" + Date.now()}
+
+                    // 2. The src now has a meaningless query parameter with the timestamp.
+                    //    This tricks the browser into thinking it's a new file, bypassing the cache
+                    //    and forcing it to replay the GIF from the beginning.
+                    src={`${currentFeature.overlayGif}?t=${Date.now()}`}
+                    // --- END OF PRECISION FIX ---
+
+                    alt={currentFeature.title + " in action"}
+                    className="w-full h-full object-cover animate-fade-in"
+                  />
+                );
+              }
+
+              // 2. In ALL other cases (feature is not expanded, or it has no GIF), show the screenshot.
+              //    If no feature is expanded, it defaults to showing the first feature's screenshot.
+              const imageToShow = currentFeature?.screenshot || features[0].screenshot;
+              const imageKey = currentFeature?.id || features[0].id;
+
+              return (
                 <img
-                  // We add a 'key' to the image to force a re-render (with a fade effect) when the src changes.
-                  key={currentFeature.id}
-                  src={currentFeature.screenshot}
-                  alt={currentFeature.title}
-                  className="w-full h-full object-cover animate-fade-in" // 'animate-fade-in' is a simple fade animation
+                  key={imageKey + "-screenshot"} // Unique key for the screenshot
+                  src={imageToShow}
+                  alt={currentFeature?.title || "Feature preview"}
+                  className="w-full h-full object-cover animate-fade-in"
                 />
-              ) : (
-                // This is a fallback for when no feature is expanded.
-                <div className="w-full h-full flex items-center justify-center text-white/60">
-                  <span>Select a feature to see preview</span>
-                </div>
               );
+
+              // --- END OF PRECISION FIX ---
             })()}
-          {/* </div> */}
+          </div>
         </div>
 
         {/* Right side - Features list (Accordion) */}
@@ -112,7 +167,7 @@ export default function FeaturesSection() {
             <div key={feature.id} className="border-b border-white/20 pb-4">
               <button
                 onClick={() => toggleFeature(feature.id)}
-                className="w-full flex items-center justify-between text-left group py-2" // Added py-2 for better click area
+                className="w-full flex items-center justify-between text-left group py-2"
               >
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-semibold text-white group-hover:text-white/80 transition-colors">
@@ -127,10 +182,21 @@ export default function FeaturesSection() {
                 </div>
               </button>
 
-              {/* The description is conditionally rendered as before */}
+              {/* Conditionally rendered description area */}
               {expandedFeature === feature.id && (
                 <div className="mt-2 pr-10 animate-fade-in">
                   <p className="text-white/80 text-base md:text-lg leading-relaxed">{feature.description}</p>
+
+                  {/* The bullet points logic remains the same and is correct */}
+                  {feature.details && (
+                    <ul className="mt-4 space-y-3 list-disc pl-5 text-white/70">
+                      {feature.details.map((detail: string, index: Key | null | undefined) => (
+                        <li key={index} className="text-base leading-relaxed">
+                          <span dangerouslySetInnerHTML={{ __html: detail.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white/90 font-semibold">$1</strong>') }} />
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               )}
             </div>
@@ -140,7 +206,6 @@ export default function FeaturesSection() {
     </section>
   )
 }
-// --- END OF PRECISION FIX ---
 
 // You might need to add this simple fade-in animation to your globals.css file
 /* In your globals.css:
