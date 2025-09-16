@@ -59,7 +59,9 @@ const features: Feature[] = [
     // 2. We add a new 'details' array for the bullet points.
     details: [
       "**Generative Cinematography:** AI designs a complete sequence of professional shots, from seamless tracking to dynamic multi-angle cuts, all tailored to your model.",
-      "**Intelligent Lighting:** Our system thinks like a Director of Photography, crafting physically-based lighting to make your product the hero of every frame."
+      "**Intelligent Lighting:** Our system thinks like a Director of Photography, crafting physically-based lighting to make your product the hero of every frame.",
+      "**Total Creative Control:** Your vision is paramount. **Effortlessly fine-tune any AI-generated keyframe** directly in the 3D viewport. Adjust the camera angle, distance, and lighting until every shot is perfect.",
+      // "**Seamless Team Collaboration:** Instantly share a live, interactive preview of your entire sequence with a single link. Gather feedback, align with your team, and iterate on the creative direction in real-time."
     ],
 
     // 3. We use the original 'screenshot' for the static base image.

@@ -3,11 +3,14 @@ import { useState } from "react"
 import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import { sendGAEvent } from "@/lib/ga-events"
 
 export default function CallToAction() {
   const [email, setEmail] = useState<string>("")
+  const [role, setRole] = useState<string>("")
+  const [socialLink, setSocialLink] = useState<string>("")
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   const [message, setMessage] = useState<string>("")
   const { toast } = useToast()
@@ -22,7 +25,7 @@ export default function CallToAction() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, role, socialLink }),
       })
 
       const data = await response.json()
@@ -33,12 +36,14 @@ export default function CallToAction() {
           email_domain: email.split("@")[1] || "unknown",
         })
 
-        setMessage("Submitted. Thanks! We'll be in touch soon.")
+        setMessage("Successfully submitted! We'll contact you soon.")
         toast({
           title: "Success",
-          description: "Submitted. Thanks! We'll be in touch soon.",
+          description: "Successfully submitted! We'll contact you soon.",
         })
         setEmail("")
+        setRole("")
+        setSocialLink("")
       } else {
         sendGAEvent("waitlist_signup_failed", {
           error: data.message || "unknown_error",
@@ -46,10 +51,10 @@ export default function CallToAction() {
         throw new Error(data.message || "Failed to submit")
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again.")
+      setMessage("Submission failed, please try again.")
       toast({
         title: "Error",
-        description: "An error occurred. Please try again.",
+        description: "Submission failed, please try again.",
       })
     } finally {
       setIsSubmitting(false)
@@ -74,19 +79,59 @@ export default function CallToAction() {
             <Input
               id="email"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="h-12 md:h-14 text-base md:text-lg w-full bg-black/20 border-white/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
+              className="h-12 md:h-14 text-base md:text-sm w-full bg-black/20 border-white/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
               aria-label="Email address"
             />
+
+            <Select value={role} onValueChange={setRole} required>
+              <SelectTrigger className="h-12 md:h-14 text-base md:text-sm w-full bg-black/20 border-white/30 text-white focus:ring-2 focus:ring-white/50 backdrop-blur-sm">
+                <SelectValue placeholder="What's your role?" className="text-white/60" />
+              </SelectTrigger>
+              <SelectContent className="bg-black/90 border-white/30 backdrop-blur-sm">
+                <SelectItem value="Designer" className="text-white hover:bg-white/10">
+                  Designer
+                </SelectItem>
+                <SelectItem value="Product Manager" className="text-white hover:bg-white/10">
+                  Product Manager
+                </SelectItem>
+                <SelectItem value="Director" className="text-white hover:bg-white/10">
+                  Director
+                </SelectItem>
+                <SelectItem value="Developer" className="text-white hover:bg-white/10">
+                  Developer
+                </SelectItem>
+                <SelectItem value="Founder" className="text-white hover:bg-white/10">
+                  Founder
+                </SelectItem>
+                <SelectItem value="Marketing" className="text-white hover:bg-white/10">
+                  Marketing
+                </SelectItem>
+                <SelectItem value="Other" className="text-white hover:bg-white/10">
+                  Other
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Input
+              id="socialLink"
+              type="url"
+              placeholder="Your Twitter/LinkedIn profile (optional)"
+              value={socialLink}
+              onChange={(e) => setSocialLink(e.target.value)}
+              className="h-12 md:h-14 text-base md:text-sm w-full bg-black/20 border-white/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
+              aria-label="Social media profile"
+            />
+
             <Button
               type="submit"
               disabled={isSubmitting}
               className="h-12 md:h-14 px-6 text-base md:text-lg bg-white hover:bg-white/90 text-black transition-colors w-full"
             >
-              {isSubmitting ? "Submitting..." : "Waitlist now"}
+              {isSubmitting ? "Submitting..." : "Waitlist Now"}
             </Button>
           </form>
 

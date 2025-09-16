@@ -17,8 +17,7 @@ const getUserLocation = async () => {
   }
 }
 
-// 保存 Email 到 Airtable 的函数
-const saveEmailToAirtable = async (email: string, userLocation: any) => {
+const saveEmailToAirtable = async (email: string, role: string, socialLink: string, userLocation: any) => {
   const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`
   const currentTime = new Date().toISOString().split("T")[0]
 
@@ -30,6 +29,8 @@ const saveEmailToAirtable = async (email: string, userLocation: any) => {
           {
             fields: {
               Email: email,
+              Role: [role],
+              SocialLink: socialLink || "", // Handle optional field
               Date: currentTime,
               Location: userLocation ? userLocation.city : "Unknown",
             },
@@ -66,18 +67,21 @@ function validateEmail(email: string) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { email } = await request.json()
+    const { email, role, socialLink } = await request.json()
 
     // 校验邮箱格式
     if (!email || !validateEmail(email)) {
       return NextResponse.json({ message: "Invalid email address" }, { status: 400 })
     }
 
+    if (!role) {
+      return NextResponse.json({ message: "Role is required" }, { status: 400 })
+    }
+
     // 获取用户的地理位置信息
     const userLocation = await getUserLocation()
 
-    // 保存邮箱、时间和地区到 Airtable
-    await saveEmailToAirtable(email, userLocation)
+    await saveEmailToAirtable(email, role, socialLink, userLocation)
 
     return NextResponse.json({ message: "Email saved successfully!" })
   } catch (error) {
