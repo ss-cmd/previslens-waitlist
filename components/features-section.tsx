@@ -59,8 +59,9 @@ const features: Feature[] = [
     // 2. We add a new 'details' array for the bullet points.
     details: [
       "**Generative Cinematography:** AI designs a complete sequence of professional shots, from seamless tracking to dynamic multi-angle cuts, all tailored to your model.",
-      "**Intelligent Lighting:** Our system thinks like a Director of Photography, crafting physically-based lighting to make your product the hero of every frame.",
-      "**Total Creative Control:** Your vision is paramount. **Effortlessly fine-tune any AI-generated keyframe** directly in the 3D viewport. Adjust the camera angle, distance, and lighting until every shot is perfect.",
+      "**Interactive Fine-Tuning:** Your vision is paramount. Take full control by effortlessly adjusting any AI-generated keyframe directly in the 3D viewport until every shot is perfect.",
+      "**Seamless Team Collaboration:** Instantly share a live, interactive preview of your entire sequence with a single link to gather feedback and align your team in real-time."
+      // "**Total Creative Control:** Your vision is paramount. **Effortlessly fine-tune any AI-generated keyframe** directly in the 3D viewport. Adjust the camera angle, distance, and lighting until every shot is perfect.",
       // "**Seamless Team Collaboration:** Instantly share a live, interactive preview of your entire sequence with a single link. Gather feedback, align with your team, and iterate on the creative direction in real-time."
     ],
 
@@ -72,8 +73,21 @@ const features: Feature[] = [
     // --- END OF MODIFICATION ---
   },
   {
+    // --- 这是您提议的核心修改 ---
+    id: "native-pipeline",
+    title: "An AI-Native Pipeline",
+    description:
+      "Unlike traditional software with AI 'add-ons', our entire pipeline is AI-native from day one.",
+    // 将两个核心应用场景，作为这个模块的“子弹点”
+    details: [
+      "**Art-Direct Generative Video:** Use your perfectly composed frames as a visual ground truth to guide any AI video model like Sora or Veo, ensuring absolute control over your starting and ending shots.",
+      "**Visualize New Concepts:** Select any 'golden frame' and use a simple prompt to transform it into a stunning, stylized image—perfect for new campaigns or on-brand UGC."
+    ],
+    screenshot: "/native-pipeline.png",
+  },
+  {
     id: "pro-export",
-    title: "One Click, Export a Production-Ready Scene",
+    title: "Export Production-Ready Scene In Seconds",
     // "Export a Production-Ready Scene",
     details: null,
     description:
@@ -94,6 +108,7 @@ const features: Feature[] = [
     // isComingSoon: true,
     screenshot: "/ai-render.png", // 视觉：前后对比图
   },
+
 
 ]
 

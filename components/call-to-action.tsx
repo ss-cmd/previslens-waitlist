@@ -119,7 +119,7 @@ export default function CallToAction() {
             <Input
               id="socialLink"
               type="url"
-              placeholder="Your Twitter/LinkedIn profile (optional)"
+              placeholder="Your Social link Twitter/LinkedIn/IG (optional)"
               value={socialLink}
               onChange={(e) => setSocialLink(e.target.value)}
               className="h-12 md:h-14 text-base md:text-sm w-full bg-black/20 border-white/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
