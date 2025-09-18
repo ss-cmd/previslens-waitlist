@@ -50,15 +50,15 @@ const features: Feature[] = [
   // },
   {
     id: "instant-video",
-    title: "Your AI Co-Director",
+    title: "AI Co-Director, From Prompt to Cinematic Sequence",
 
     // --- START OF MODIFICATION ---
     // 1. We keep your excellent opening sentence as the main description.
-    description: "Stop wrestling with timelines and complex software. Just describe the shot, and our AI creative partner handles the rest:",
+    description: "Stop wrestling with timelines and complex software. Previslens is built for natural language. Just describe the shot you imagine, and our AI co-director instantly generates a complete sequence of professional shots, ready for you to fine-tune.",
 
     // 2. We add a new 'details' array for the bullet points.
     details: [
-      "**Generative Cinematography:** AI designs a complete sequence of professional shots, from seamless tracking to dynamic multi-angle cuts, all tailored to your model.",
+      "**Generative Cinematography:** From seamless tracking to dynamic multi-angle cuts, all tailored to your model. Automatically composed for any aspect ratio—from cinematic 16:9 to vertical 9:16.",
       "**Interactive Fine-Tuning:** Your vision is paramount. Take full control by effortlessly adjusting any AI-generated keyframe directly in the 3D viewport until every shot is perfect.",
       "**Seamless Team Collaboration:** Instantly share a live, interactive preview of your entire sequence with a single link to gather feedback and align your team in real-time."
       // "**Total Creative Control:** Your vision is paramount. **Effortlessly fine-tune any AI-generated keyframe** directly in the 3D viewport. Adjust the camera angle, distance, and lighting until every shot is perfect.",
@@ -77,8 +77,8 @@ const features: Feature[] = [
     id: "native-pipeline",
     title: "An AI-Native Pipeline",
     description:
-      "Unlike traditional software with AI 'add-ons', our entire pipeline is AI-native from day one.",
-    // 将两个核心应用场景，作为这个模块的“子弹点”
+      "Unlike traditional software with AI 'add-ons', our entire pipeline is AI-native from day one. Stop gambling with prompts. Our tool generates a complete 3D 'digital skeleton'—models, lights, and cameras—that acts as the visual ground truth.",
+   // 将两个核心应用场景，作为这个模块的“子弹点”
     details: [
       "**Art-Direct Generative Video:** Use your perfectly composed frames as a visual ground truth to guide any AI video model like Sora or Veo, ensuring absolute control over your starting and ending shots.",
       "**Visualize New Concepts:** Select any 'golden frame' and use a simple prompt to transform it into a stunning, stylized image—perfect for new campaigns or on-brand UGC."
@@ -101,12 +101,13 @@ const features: Feature[] = [
     details: null,
     // "AI Render with Perfect Brand Fidelity",
     description:
-      "Unlock limitless creative styles without compromising brand fidelity. Our AI Render applies any artistic concept directly onto your product's true 3D geometry. Use it to art-direct the perfect starting and ending frames, providing a visual ground truth to guide any generative model, visualize new campaigns or empower your community to create on-brand UGC.",
+      // "Unlock limitless creative styles without compromising brand fidelity. Our AI Render applies any artistic concept directly onto your product's true 3D geometry. Use it to art-direct the perfect starting and ending frames, providing a visual ground truth to guide any generative model, visualize new campaigns or empower your community to create on-brand UGC.",
+      "Unlock limitless creative styles without compromising brand fidelity. Our AI Render applies any artistic concept directly onto your product's true 3D geometry. Use this powerful feature to instantly visualize new campaigns or empower your community to create on-brand UGC.",
     // "Our AI respects your core asset. Whether you upload a precise 3D model or generate a new concept with AI, we render stunning, creative visuals directly onto your product's true geometry. No guesswork, no approximations.It's the perfect tool to visualize new concepts, or to empower your community to generate stunning, on-brand UGC that respects your core asset.",
     // "Unlock limitless creative variations without compromising your brand. Our advanced AI rendering pipeline applies any artistic style directly onto your product's true geometry. Go from a standard 3D model to a stunning, on-brand visual in a single step. Perfect for visualizing new campaigns or empowering your community to create.",
     // "Go beyond photorealism. Our AI applies any creative style directly onto your product's true geometry. Visualize new concepts, or empower your community to generate stunning, on-brand UGC.",
     // isComingSoon: true,
-    screenshot: "/ai-render.png", // 视觉：前后对比图
+    screenshot: "/ai-render.png", 
   },
 
 
@@ -234,3 +235,4 @@ export default function FeaturesSection() {
   animation: fadeIn 0.5s ease-in-out;
 }
 */
+// YNBK9LCN
