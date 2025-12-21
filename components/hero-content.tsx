@@ -155,7 +155,7 @@ export default function HeroContent() {
         <CallToAction />
 
         {/* Video Section */}
-        <VideoSection />
+        {/* <VideoSection /> */}
 
         {/* CTA Content */}
         {/* <section className="mb-24 md:mb-32">
