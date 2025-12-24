@@ -89,9 +89,9 @@ export const siteConfig = {
     home: {
       // NEW HOME TITLE: Uses the core search term "Figma Alternative".
       // title: "ForYourReference | AI-Powered Visual Collaboration for Teams",
-      title: "ForYourReference | Your Team's Visual Workspace, Without the Seat Costs",
+      title: "PrevisLens | Create. Visualize. Render. ",
       description:
-      "Tired of paying for extra seats for contractors who just drop in a few files? ForYourReference is the visual workspace that works like Google Docs—free for contributors. A shared canvas for moodboards and creative research, without the seat costs.",
+      "No Setup.Create Your Product's Story Now.",
     },
 
   },
