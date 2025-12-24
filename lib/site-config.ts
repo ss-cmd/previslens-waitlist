@@ -65,9 +65,9 @@ export const siteConfig = {
   twitter: {
     card: "summary_large_image",
     creator: "@momoiamcgi",
-    title: "Stop Paying Figma Tax 💸", // 使用更吸引眼球的、适合Twitter的标题
+    title: "Previslens📹", // 使用更吸引眼球的、适合Twitter的标题
     description:
-      "Tired of the $400/mo Figma bill for people who just drop in photos? ForYourReference is the visual workspace that works like Google Docs—free for contributors.",
+      "Previs Is Final",
     images: ["/twitter-image.png"], // 修改为相对路径，图片应在public目录
   },
 
