@@ -123,7 +123,8 @@ export default function HeroContent() {
       <div className="fixed top-20 left-1/2 -translate-x-1/2 z-20">
         <span className="inline-block text-white font-semibold text-base tracking-wide bg-black/40 px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
           {/* Your AI Co-Director for Cinematic Product Shots */}
-          Instant Cinematic Video, Directed by AI
+          {/* Instant Cinematic Video, Directed by AI */}
+          Previs Is Final
         </span>
       </div>
 
