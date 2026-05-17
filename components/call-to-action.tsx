@@ -6,8 +6,6 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { sendGAEvent } from "@/lib/ga-events"
 
-const waitlistEndpoint = process.env.NEXT_PUBLIC_WAITLIST_ENDPOINT
-
 export default function CallToAction() {
   const [email, setEmail] = useState<string>("")
   const [role, setRole] = useState<string>("")
@@ -19,18 +17,10 @@ export default function CallToAction() {
     e.preventDefault()
     setMessage("")
 
-    if (!waitlistEndpoint) {
-      setMessage("Waitlist is not connected yet. Please email contact@previslens.com.")
-      sendGAEvent("waitlist_signup_failed", {
-        error: "missing_waitlist_endpoint",
-      })
-      return
-    }
-
     setIsSubmitting(true)
 
     try {
-      const response = await fetch(waitlistEndpoint, {
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -64,8 +64,8 @@ export const siteConfig = {
   // 5. Icons & Theme Colors
   // ---------------------------------------------------------------------------
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
     apple: "/apple-touch-icon.png",
   },
   themeColors: [
