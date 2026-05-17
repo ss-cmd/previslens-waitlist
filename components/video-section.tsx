@@ -6,20 +6,19 @@ interface VideoSectionProps {
 
 const showcaseVideos = [
   {
+    src: "/previslens/previslens.mp4",
+  },
+  {
     src: "/showcase/previslens-agent-01.mp4",
-    className: "aspect-video min-w-[280px] sm:min-w-[360px] lg:min-w-0",
   },
   {
     src: "/showcase/previslens-agent-02.mp4",
-    className: "aspect-video min-w-[280px] sm:min-w-[360px] lg:min-w-0",
   },
   {
     src: "/showcase/previslens-agent-03.mp4",
-    className: "aspect-[9/16] min-w-[170px] sm:min-w-[210px] lg:min-w-0",
   },
   {
     src: "/showcase/previslens-agent-04.mp4",
-    className: "aspect-[9/16] min-w-[170px] sm:min-w-[210px] lg:min-w-0",
   },
 ]
 
@@ -39,11 +38,11 @@ export default function VideoSection({ className }: VideoSectionProps) {
       </div>
 
       <div className="overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="grid auto-cols-max grid-flow-col gap-3 lg:grid-flow-row lg:grid-cols-[1.25fr_1.25fr_0.72fr_0.72fr] lg:items-stretch">
+        <div className="grid auto-cols-[minmax(220px,1fr)] grid-flow-col gap-3 lg:grid-flow-row lg:grid-cols-5">
           {showcaseVideos.map((video) => (
             <div
               key={video.src}
-              className={`overflow-hidden rounded-[18px] border border-white/15 bg-black shadow-2xl shadow-black/35 ${video.className}`}
+              className="h-[320px] overflow-hidden rounded-[18px] border border-white/15 bg-black shadow-2xl shadow-black/35 md:h-[360px] lg:h-[300px]"
             >
               <video autoPlay loop muted playsInline className="h-full w-full object-cover">
                 <source src={video.src} type="video/mp4" />
