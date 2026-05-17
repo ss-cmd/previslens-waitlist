@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
 
   title: {
-    default: siteConfig.name,
+    default: siteConfig.page.home.title,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: siteConfig.page.home.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [

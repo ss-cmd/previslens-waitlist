@@ -5,47 +5,37 @@ export const siteConfig = {
   // 1. Core Site Information
   // ---------------------------------------------------------------------------
   name: "PrevisLens",
-  url: "https://www.previslens.com", // Your final production domain
+  url: "https://previslens.com",
 
   // 2. SEO Metadata (Crucial for Google and LLMs)
   // ---------------------------------------------------------------------------
-  // NEW DESCRIPTION: Directly addressing the pain from the tweet.
   description:
-    "Tired of paying hundreds for Figma seats for contractors who just drop in a few files? ForYourReference is the visual workspace that works like Google Docs—free for contributors. A shared canvas for moodboards where anyone can add ideas, without the extra seat costs.",
+    "PrevisLens is an agent-first creative workspace that turns product assets into cinematic directions, visual stories, and campaign-ready ideas for modern brands.",
 
-  // NEW KEYWORDS: Infused with high-intent phrases from the tweet.
   keywords: [
-    // High-intent keywords from user search
-    "Figma alternative",
-    "figma seat pricing",
-    "Figma alternative for contractors",
-    "visual workspace collaboration",
-    "Google Docs for images",
-
-    // Core category keywords
-    "moodboard tool",
-    "storyboard tool",
-    "online collaboration tool",
-    "brainstorming tool",
-
-    // Pain point / solution keywords
-    "reduce Figma costs",
-    "save on software seats",
-    "unlimited free contributors",
-    "share moodboard with client",
-    "collect feedback without login",
-
-    // Your unique value proposition keywords
-    "AI moodboard generator",
-    "bias-free collaboration",
-    "pre-production canvas",
-
-    "creative interface",
-    "creative workflow",
-    "design productivity",
-    "prototyping tool",
-    "generative AI",
-    "curation",
+    "PrevisLens",
+    "agent-first creative workspace",
+    "agent-first product workflow",
+    "AI creative workflow",
+    "AI creative agent",
+    "AI creative director",
+    "product creative agent",
+    "product asset workflow",
+    "assets to creative direction",
+    "assets to product story",
+    "cinematic product stories",
+    "product campaign ideas",
+    "product visual ideas",
+    "product content workflow",
+    "brand content workflow",
+    "AI product content",
+    "AI product marketing",
+    "AI campaign creative",
+    "creative direction platform",
+    "product launch creative",
+    "visual campaign workflow",
+    "creative agent workflow",
+    "modern brand creative",
   ],
 
   // 3. Author & Creator Information
@@ -65,10 +55,10 @@ export const siteConfig = {
   twitter: {
     card: "summary_large_image",
     creator: "@momoiamcgi",
-    title: "Previslens📹", // 使用更吸引眼球的、适合Twitter的标题
+    title: "PrevisLens | Agent-First Creative Workspace",
     description:
-      "Previs Is Final",
-    images: ["/twitter-image.png"], // 修改为相对路径，图片应在public目录
+      "Turn product assets into cinematic directions and visual stories with an agent-first creative workflow.",
+    images: ["/twitter-image.png"],
   },
 
   // 5. Icons & Theme Colors
@@ -87,11 +77,9 @@ export const siteConfig = {
   // ---------------------------------------------------------------------------
   page: {
     home: {
-      // NEW HOME TITLE: Uses the core search term "Figma Alternative".
-      // title: "ForYourReference | AI-Powered Visual Collaboration for Teams",
-      title: "PrevisLens | Create. Visualize. Render. ",
+      title: "PrevisLens | Agent-First Creative Workspace",
       description:
-      "No Setup.Create Your Product's Story Now.",
+      "Turn product assets into cinematic directions, visual stories, and campaign-ready ideas with an agent-first creative workspace.",
     },
 
   },
@@ -100,7 +88,7 @@ export const siteConfig = {
   // ---------------------------------------------------------------------------
   social: {
     twitter: "https://x.com/shuxiaoshushu",
-    email: "mailto:contact@foryourref.com",
+    email: "mailto:contact@previslens.com",
     instagram: "https://www.instagram.com/momoiamcgi",
   },
 }

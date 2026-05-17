@@ -1,47 +1,57 @@
 "use client"
-import FeaturesSection from "./features-section"
 
 interface VideoSectionProps {
   className?: string
 }
 
+const showcaseVideos = [
+  {
+    src: "/showcase/previslens-agent-01.mp4",
+    className: "aspect-video min-w-[280px] sm:min-w-[360px] lg:min-w-0",
+  },
+  {
+    src: "/showcase/previslens-agent-02.mp4",
+    className: "aspect-video min-w-[280px] sm:min-w-[360px] lg:min-w-0",
+  },
+  {
+    src: "/showcase/previslens-agent-03.mp4",
+    className: "aspect-[9/16] min-w-[170px] sm:min-w-[210px] lg:min-w-0",
+  },
+  {
+    src: "/showcase/previslens-agent-04.mp4",
+    className: "aspect-[9/16] min-w-[170px] sm:min-w-[210px] lg:min-w-0",
+  },
+]
+
 export default function VideoSection({ className }: VideoSectionProps) {
-  const videoId ="OEZVredw8Gc"
-  //  "JhrSRv524tg" // YouTube video ID
-
-return (
-  <section id="video-section" className={`max-w-7xl mx-auto px-4 sm:px-6 mb-20 ${className || ""}`}>
-    <div className="flex flex-col gap-12 items-center">
-      
-      {/* --- START OF PRECISION FIX --- */}
-      {/* The video player and the disclaimer now share the same parent container (max-w-6xl). */}
-      <div className="w-full max-w-6xl">
-        
-        {/* Video Player */}
-        <div className="aspect-video rounded-xl bg-black/20 overflow-hidden border border-white/20 shadow-2xl shadow-black/40">
-          <iframe
-            className="w-full h-full"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0`}
-            title="PrevisLens Demo Showcase"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+  return (
+    <section id="video-section" className={`mx-auto mb-24 mt-2 w-full max-w-7xl md:mt-0 ${className || ""}`}>
+      <div className="mb-6 flex flex-col items-center justify-between gap-3 px-1 text-center md:flex-row md:text-left">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">Agent-first Showcase</p>
+          <h2 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
+            One agent. Many creative directions.
+          </h2>
         </div>
-
-        {/* Disclaimer Text - Now perfectly aligned with the video above */}
-        <div className="px-2 pt-4">
-          <p className="text-xs text-white/50 leading-relaxed text-center">
-            The model featured in our demo is for illustrative purposes only. PrevisLens is not affiliated with, sponsored by, or endorsed by any car manufacturer. All trademarks are the property of their respective owners.
-          </p>
-        </div>
-
+        <p className="max-w-sm text-sm leading-7 text-white/68">
+          Explore how PrevisLens turns assets into cinematic product stories through an agent-first workflow.
+        </p>
       </div>
 
-      {/* --- Feature Points Section --- */}
-      <div className="w-full max-w-6xl flex flex-col justify-center space-y-8 px-8 py-10 bg-black/20 rounded-xl backdrop-blur-md border border-white/10">
-           <FeaturesSection />
+      <div className="overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="grid auto-cols-max grid-flow-col gap-3 lg:grid-flow-row lg:grid-cols-[1.25fr_1.25fr_0.72fr_0.72fr] lg:items-stretch">
+          {showcaseVideos.map((video) => (
+            <div
+              key={video.src}
+              className={`overflow-hidden rounded-[18px] border border-white/15 bg-black shadow-2xl shadow-black/35 ${video.className}`}
+            >
+              <video autoPlay loop muted playsInline className="h-full w-full object-cover">
+                <source src={video.src} type="video/mp4" />
+              </video>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
 }

@@ -12,7 +12,7 @@ export default function footer() {
           {/* 联系方式图标 */}
           <div className="flex justify-center space-x-8 text-text-secondary">
           <a
-              href="mailto:contact@foryourref.com"
+              href="mailto:contact@previslens.com"
               aria-label="Email"
               className="hover:text-primary transition"
             >
