@@ -10,7 +10,7 @@ export const siteConfig = {
   // 2. SEO Metadata (Crucial for Google and LLMs)
   // ---------------------------------------------------------------------------
   description:
-    "PrevisLens is an agent-first creative workspace that turns product assets into cinematic directions, visual stories, and campaign-ready ideas for modern brands.",
+    "PrevisLens is an agent-first creative workspace that turns product assets into cinematic directions, visual stories, and campaign-ready ideas for modern brands",
 
   keywords: [
     "PrevisLens",
