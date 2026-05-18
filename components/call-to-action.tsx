@@ -59,10 +59,10 @@ export default function CallToAction() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
             Agent-first.
             <br />
-            Turn assets into a storyboard.
+            Turn assets into your product&apos;s highlights.
           </h2>
           <p className="mt-4 text-sm leading-7 text-white/68 md:max-w-md md:text-base">
-            PrevisLens helps teams move from product assets to cinematic directions with an agent-first creative workflow.
+            PrevisLens helps teams move from product assets to cinematic shots.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export default function CallToAction() {
               disabled={isSubmitting}
               className="h-12 md:h-14 px-6 text-base md:text-lg bg-white hover:bg-white/90 text-black transition-colors w-full"
             >
-              {isSubmitting ? "Submitting..." : "Request Early Access"}
+              {isSubmitting ? "Submitting..." : "Join the waitlist"}
             </Button>
           </form>
 

@@ -10,32 +10,26 @@ export const siteConfig = {
   // 2. SEO Metadata (Crucial for Google and LLMs)
   // ---------------------------------------------------------------------------
   description:
-    "PrevisLens is an agent-first creative workspace that turns product assets into cinematic directions, visual stories, and campaign-ready ideas for modern brands",
+    "PrevisLens is an agent-first creative tool for turning product assets into cinematic shots, visual stories, and launch-ready content.",
 
   keywords: [
     "PrevisLens",
-    "agent-first creative workspace",
-    "agent-first product workflow",
+    "agent-first creative tool",
+    "product video generation",
+    "AI product video",
     "AI creative workflow",
-    "AI creative agent",
-    "AI creative director",
-    "product creative agent",
+    "creative agent",
+    "product storytelling",
     "product asset workflow",
-    "assets to creative direction",
-    "assets to product story",
+    "assets to cinematic shots",
     "cinematic product stories",
-    "product campaign ideas",
-    "product visual ideas",
-    "product content workflow",
-    "brand content workflow",
-    "AI product content",
+    "product content generation",
+    "brand content generation",
     "AI product marketing",
     "AI campaign creative",
-    "creative direction platform",
-    "product launch creative",
-    "visual campaign workflow",
-    "creative agent workflow",
-    "modern brand creative",
+    "product launch content",
+    "cinematic product shots",
+    "visual content workflow",
   ],
 
   // 3. Author & Creator Information
@@ -55,9 +49,9 @@ export const siteConfig = {
   twitter: {
     card: "summary_large_image",
     creator: "@momoiamcgi",
-    title: "PrevisLens | Agent-First Creative Workspace",
+    title: "PrevisLens | Agent-First Product Storytelling",
     description:
-      "Turn product assets into cinematic directions and visual stories with an agent-first creative workflow.",
+      "Turn product assets into cinematic shots and visual stories with an agent-first creative tool.",
     images: ["/twitter-image.png"],
   },
 
@@ -77,9 +71,9 @@ export const siteConfig = {
   // ---------------------------------------------------------------------------
   page: {
     home: {
-      title: "PrevisLens | Agent-First Creative Workspace",
+      title: "PrevisLens | Agent-First Product Storytelling",
       description:
-      "Turn product assets into cinematic directions, visual stories, and campaign-ready ideas with an agent-first creative workspace.",
+      "Turn product assets into cinematic shots, visual stories, and launch-ready content with an agent-first creative tool.",
     },
 
   },

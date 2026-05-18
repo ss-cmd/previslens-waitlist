@@ -72,13 +72,10 @@ export default function VideoSection({ className }: VideoSectionProps) {
       <section id="video-section" className={`mx-auto mb-24 mt-2 w-full max-w-7xl md:mt-0 ${className || ""}`}>
         <div className="mb-6 flex flex-col items-center justify-between gap-3 px-1 text-center md:flex-row md:text-left">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">Agent-first Showcase</p>
-            <h2 className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
-              One agent. Many creative directions.
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/55">Showcase</p>
           </div>
           <p className="max-w-sm text-sm leading-7 text-white/68">
-            Explore how PrevisLens turns assets into cinematic product stories through an agent-first workflow.
+            Explore how PrevisLens turns assets into cinematic product stories.
           </p>
         </div>
 
@@ -96,8 +93,7 @@ export default function VideoSection({ className }: VideoSectionProps) {
                   <source src={video.src} type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-4">
-                  <span className="text-sm font-medium text-white/90">Storyboard view {index + 1}</span>
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-end p-4">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/35 text-white backdrop-blur-md transition group-hover:border-white/35 group-hover:bg-black/45">
                     <Play className="ml-0.5 h-4 w-4 fill-current" />
                   </span>

@@ -45,7 +45,7 @@ export default function HeroContent() {
 
             <div className="relative z-10 space-y-8 text-center">
               <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-                Join the waitlist for the agent-first workflow.
+                Join the waitlist.
               </h2>
 
               <div className="flex justify-center py-4">
@@ -61,7 +61,7 @@ export default function HeroContent() {
                   href="#cta-section"
                   className="inline-block border-b border-white text-lg text-white transition-colors hover:border-transparent hover:text-white/80 md:text-xl"
                 >
-                  Waitlist now.
+                  Join the waitlist.
                 </a>
               </div>
             </div>
